@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using SampleIdentity.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SampleIdentity.DAL;
+using SampleIdentity.Models;
+using SampleIdentity.Services;
 
 namespace SampleIdentity
 {
@@ -39,6 +42,9 @@ namespace SampleIdentity
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IMahasiswaService, MahasiswaService>();
+            services.AddScoped<IMahasiswa, MahasiswaDAL>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

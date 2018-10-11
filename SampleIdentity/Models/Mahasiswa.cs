@@ -12,5 +12,8 @@ namespace SampleIdentity.Models
         public string Nim { get; set; }
         public string Nama { get; set; }
         public double IPK { get; set; }
+
+        [StringLength(10)]
+        public string Alamat { get; set; }
     }
 }

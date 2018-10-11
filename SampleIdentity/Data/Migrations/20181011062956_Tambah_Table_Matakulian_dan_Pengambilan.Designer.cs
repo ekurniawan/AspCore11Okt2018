@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SampleIdentity.Data;
 
 namespace SampleIdentity.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181011062956_Tambah_Table_Matakulian_dan_Pengambilan")]
+    partial class Tambah_Table_Matakulian_dan_Pengambilan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -188,9 +190,6 @@ namespace SampleIdentity.Data.Migrations
                 {
                     b.Property<string>("Nim")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Alamat")
-                        .HasMaxLength(10);
 
                     b.Property<double>("IPK");
 
